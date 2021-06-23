@@ -5,10 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sorting Visualizer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- Script -->
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <h1>Sorting Visualizer</h1>
+    <header class="header">
+      <h2 class="title">SORTING VISUALIZER</h2>
+      <nav class="nav">
+        <section class="nav__algorithms">
+          <h2 class="nav__algorithms__title">Algorithms:</h2>
+          <div class="nav__algorithms__buttons">
+            <button class="radio">Bubble</button>
+            <button class="radio">Selection</button>
+            <button class="radio">Insertion</button>
+            <button class="radio">Merge</button>
+            <button class="radio">Quick</button>
+            <button class="radio">Heap</button>
+          </div>
+        </section>
+
+        <section class="nav__sliders">
+          <div class="nav__slider__speed">
+            <label for="sort-speed">Speed:</label>
+            <input type="range" id="sort-speed" name="sort-speed" min="0" max="100" />
+          </div>
+
+          <div class="nav__slider__size">
+            <label for="sort-size">Size:</label>
+            <input type="range" id="sort-size" name="sort-size" min="0" max="100" />
+          </div>
+        </section>
+
+        <section class="nav__controls">
+          <button class="start-stop sort--radio">Sort</button>
+          <button class="start-stop stop--radio">Stop</button>
+        </section>
+      </nav>
+    </header>
+    <main>
+      <section class="bar__container"></section>
+    </main>
   </body>
 </html>

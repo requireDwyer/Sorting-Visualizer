@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  background-color: #e1e8ed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+  letter-spacing: 2rem;
+  color: #242c33;
+}
+
+.nav__algorithms {
+  display: flex;
+}
+
+.nav__algorithms__title {
+  color: #242c33;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.nav__algorithms__buttons {
+  margin-left: 30px;
+}
+
+.nav__sliders label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #242c33;
+}
+
+.radio {
+  background-color: #e1e8ed;
+  border: 3px solid #242c33;
+  border-radius: 16px;
+  color: #242c33;
+  width: 125px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.radio:hover {
+  cursor: pointer;
+}
+
+.radio--selected {
+  background-color: #242c33;
+  color: white;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.sort--radio {
+  background-color: #e1e8ed;
+  border: 3px solid #128c7e;
+  border-radius: 16px;
+  color: #128c7e;
+  width: 125px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.sort--radio:hover {
+  cursor: pointer;
+}
+
+.sort--radio--selected {
+  background-color: #128c7e;
+  color: white;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.stop--radio {
+  background-color: #e1e8ed;
+  border: 3px solid #e60023;
+  border-radius: 16px;
+  color: #e60023;
+  width: 100px;
+  height: 30px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.stop--radio:hover {
+  cursor: pointer;
+}
+
+.stop--radio--selected {
+  background-color: #e60023;
+  color: white;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.nav__sliders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.nav__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bar__container {
+  background-color: aquamarine;
+  height: 600px;
+}
