@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 80vh;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__bar {
+  width: 1500px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 50px;
+  background-color: #242c33;
+  border-radius: 10px;
+}
+
+.bar--swap {
+  width: 100px;
+  background-color: darkorange;
+}
