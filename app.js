@@ -2,8 +2,8 @@
 const radioHTMLCollection = document.getElementsByClassName("radio");
 const radioButtons = [...radioHTMLCollection];
 
-radioButtons[2].classList.add("radio--selected");
-let radioButtonSelected = "insertion";
+radioButtons[0].classList.add("radio--selected");
+let sortingAlgorithm = bubbleSort;
 
 radioButtons.forEach((radioButton) => {
   radioButton.addEventListener("click", (event) => radioButtonHandler(event));
@@ -17,6 +17,13 @@ const radioButtonHandler = (event) => {
   clearStyleFromList(radioButtons, "radio--selected");
   radioButtonSelected = event.target.innerText.toLowerCase();
   event.target.classList.add("radio--selected");
+  sortingAlgorithm = sortingMap[event.target.innerText.toLowerCase()];
+};
+
+const sortingMap = {
+  bubble: bubbleSort,
+  selection: selectionSort,
+  insertion: insertionSort,
 };
 
 // START-STOP BUTTONS
@@ -24,6 +31,7 @@ const startStopHTMLCollection = document.getElementsByClassName("start-stop");
 const startStopButtons = [...startStopHTMLCollection];
 
 let startStopButton = "";
+let sorting = false;
 
 startStopButtons.forEach((button) => {
   button.addEventListener("click", (event) => startStopButtonHandler(event));
@@ -36,12 +44,25 @@ const startStopButtonHandler = (event) => {
   event.target.classList.add(`${buttonName}--selected`);
   startStopButton = buttonName;
 };
+
+startStopButtons[0].addEventListener("click", () => {
+  if (!sorting) {
+    startSort();
+    sorting = true;
+  }
+});
+
+const startSort = () => {
+  sortingAlgorithm(bars);
+};
+
 // RANGES
 const speedRange = document.getElementById("sort-speed");
 let delay = Number(speedRange.value);
 speedRange.addEventListener("change", (event) => {
   delay = Number(event.target.value);
 });
+
 // SORTING
 const barContainer = document.querySelector(".container__bar");
 let bars = [];
@@ -91,9 +112,10 @@ async function bubbleSort(array) {
   for (let i = 0; i < end + 1; i++) {
     colorChange(array, [i], completeColor);
   }
+  sorting = false;
 }
 
-async function selection(array) {
+async function selectionSort(array) {
   for (let i = 0; i < array.length - 1; i++) {
     let minimum = i;
     for (let j = i + 1; j < array.length; j++) {
@@ -111,6 +133,7 @@ async function selection(array) {
     colorChange(array, [i], completeColor);
   }
   colorChange(array, [array.length - 1], completeColor);
+  sorting = false;
 }
 
 async function insertionSort(array) {
@@ -155,4 +178,4 @@ function swap(array, indexOne, indexTwo) {
   array[indexTwo].style.height = temp;
 }
 
-initializeBars(0);
+initializeBars(25);
