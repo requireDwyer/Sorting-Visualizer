@@ -27,6 +27,9 @@ const sortingMap = {
 };
 
 // START-STOP BUTTONS
+// TODO: Make stop button work
+// TODO: Add shuffle button
+
 const startStopHTMLCollection = document.getElementsByClassName("start-stop");
 const startStopButtons = [...startStopHTMLCollection];
 
@@ -69,7 +72,6 @@ let bars = [];
 
 const defaultColor = "#242c33";
 const compareColor = "#f4c240";
-// const swapColor = "#f49640";
 const swapColor = "#E01E5A";
 const semiSortedColor = "#97A926";
 const completeColor = "#2eb67d";
@@ -136,6 +138,7 @@ async function selectionSort(array) {
   sorting = false;
 }
 
+// TODO: finish insertion sort
 async function insertionSort(array) {
   colorChange(array, [0], semiSortedColor);
   for (let i = 1; i < array.length; i++) {
@@ -148,6 +151,10 @@ async function insertionSort(array) {
     array[j].style.height = `${current}px`;
   }
 }
+
+// TODO: Add merge sort
+// TODO: Add quick sort
+// TODO: Add heap sort
 
 function colorChangeDelay(array, indexes, colorState) {
   return new Promise((resolve) => {
